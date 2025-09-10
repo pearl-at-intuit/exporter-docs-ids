@@ -1,0 +1,425 @@
+/* =================================== */
+/*  Guidelines Usage
+/* =================================== */
+
+/* Default theming */
+:root {
+  --guidelinesUsageGridGap: 16px;
+  --guidelinesUsageBorderRadius: var(--borderRadiusDefault);
+  --guidelinesUsageContentPadding: 16px;
+  --guidelinesUsageBackground: var(--colorBackgroundPrimary);
+  --guidelinesUsageBackgroundHover: var(--colorBackgroundPrimary);
+  --guidelinesUsageBadgeFontSize: var(--fontSizeSmall);
+  --guidelinesUsageDescriptionFontSize: var(--contentFontBase);
+  --guidelinesUsageDescriptionLineHeight: var(--contentBodyLineHeight);
+  --guidelinesUsageDescriptionInk: var(--colorInkPrimary);
+  --guidelinesUsageImageBorderRadius: var(--borderRadiusDefault);
+  --guidelinesUsageImageBorderColor: transparent;
+  --guidelinesUsageImageBackgroundColor: var(--colorBackgroundPrimary);
+
+  /* Guidelines Usage: Colors */
+  --guidelinesUsageDoInk: var(--colorGreen900);
+  --guidelinesUsageDoInkSecondary: var(--colorGreen500);
+  --guidelinesUsageDoBackground: var(--colorGreen100);
+  --guidelinesUsageDoBorder: var(--colorGreen300);
+  // --guidelinesUsageCautionInk: var(--colorOrange900);
+  // --guidelinesUsageCautionInkSecondary: var(--colorOrange500);
+  // --guidelinesUsageCautionBorder: var(--colorOrange300);
+  // --guidelinesUsageCautionBackground: var(--colorOrange100);
+  --guidelinesUsageDontInk: var(--colorRed900);
+  --guidelinesUsageDontInkSecondary: var(--colorRed500);
+  --guidelinesUsageDontBackground: var(--colorRed100);
+  --guidelinesUsageDontBorder: var(--colorRed300);
+}
+
+/* Styles */
+.content-block--guidelines-usage {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--guidelinesUsageGridGap);
+  grid-row-gap: calc(var(--guidelinesUsageGridGap)*2);
+  align-items: start;
+
+  &.layout-columns-1 {
+    grid-template-columns: repeat(1, 1fr);
+    grid-row-gap: calc(var(--guidelinesUsageGridGap)*2);
+  }
+
+  &.layout-columns-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &.layout-columns-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .guideline-usage-item {
+    border-radius: var(--guidelinesUsageBorderRadius);
+    box-sizing: border-box;
+    transition: var(--transitionDefault);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .content {
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--guidelinesUsageContentGap, 4px);
+      font-size: var(--guidelinesUsageDescriptionFontSize);
+      line-height:  var(--guidelinesUsageDescriptionLineHeight);
+      color: var(--guidelinesUsageDescriptionInk);
+
+      p {
+        font-size: var(--guidelinesUsageDescriptionFontSize);
+        line-height: var(--guidelinesUsageDescriptionLineHeight);
+      }
+
+      ol, ul {
+        margin-top: 0;
+      }
+
+      p:last-child, 
+      ul:last-child,
+      ol:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .image {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+
+      &.img-align-left {
+        align-items: flex-start;
+      }
+
+      &.img-align-center {
+        align-items: center;
+      }
+
+      &.img-align-stretch {
+        align-items: stretch;
+      }
+
+      img {
+        display: block;
+        border-radius: var(--guidelinesUsageImageBorderRadius);
+        border: 1px solid var(--guidelinesUsageImageBorderColor);
+        background-color: var(--guidelinesUsageImageBackgroundColor);
+        max-width: 100%;
+        height: auto;
+      }
+
+      .caption {
+        font-size: var(--fontSizeTiny);
+        margin-top: 0;
+      }
+    }
+
+    .type-badge {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      font-weight: var(--fontWeightBold);
+      font-size: var(--guidelinesUsageBadgeFontSize);
+      display: inline-flex;
+      align-self: flex-start;
+      border-radius: var(--borderRadiusDefault);
+
+      &.type-badge__full {
+        padding: 2px 6px;
+        background: var(--colorBackgroundSecondary);
+      }
+    }
+
+    // &.guideline-usage-item__type-caution {
+    //   .type-badge {
+    //     color: var(--guidelinesUsageCautionInkSecondary);
+    //   }
+
+    //   .type-badge__full {
+    //     background: var(--guidelinesUsageCautionBackgroundAlternative, var(--colorOrange500));
+    //     color: #FFF;
+    //   }
+    // }
+
+    &.guideline-usage-item__type-dont {
+      .type-badge {
+        color: var(--guidelinesUsageDontInkSecondary);
+      }
+
+      .type-badge__full {
+        background: var(--guidelinesUsageDontBackgroundAlternative, var(--colorRed500));
+        color: #FFF;
+      }
+    }
+
+    &.guideline-usage-item__type-do {
+      .type-badge {
+        color: var(--guidelinesUsageDoInkSecondary);
+      }
+
+      .type-badge__full {
+        background: var(--guidelinesUsageDoBackgroundAlternative, var(--colorGreen500));
+        color: #FFF;
+      }
+    }
+
+    .icon {
+      svg {
+        display: block;
+      }
+    }
+
+    p.description {
+      margin: 0;
+      padding: 0;
+      font-size: var(--guidelinesUsageDescriptionFontSize);
+      line-height: 1.4;
+      font-weight: var(--fontWeightRegular);
+      color: var(--guidelinesUsageDescriptionInk);
+      overflow-wrap: anywhere;
+    }
+  }
+}
+
+/* Shortcut variants */
+.content-block--guidelines-usage {
+  
+  // Variant: Simple
+  &.variant-simple {
+      .guideline-usage-item {
+        gap: 8px;
+
+        .content {
+          padding: 0;
+        }
+      }
+  }
+
+  // Variant: Prominent
+  &.variant-prominent {
+    gap: var(--guidelinesUsageGridGap);
+    align-items: stretch;
+
+    .guideline-usage-item {
+      gap: 0;
+
+      .image {
+        position: relative;
+
+        img {
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom: 0;
+        }
+
+        .caption-container {
+          position: absolute;
+          bottom: 8px;
+          left: 8px;
+
+          .caption {
+            display: inline-flex;
+            background: rgba(255,255,255, 0.5);
+            padding: 2px 6px;
+            border-radius: var(--borderRadiusSmall);
+          }
+        }
+
+      }
+
+      .content {
+        padding: var(--guidelinesUsageContentPadding);
+        border-top: 2px solid var(--colorBackgroundSecondary);
+        padding-top: 12px;
+
+        .type-badge {
+          margin-bottom: 8px;
+        }
+
+        a {
+          font-weight: var(--fontWeightSemibold);
+        }
+      }
+
+      // &.guideline-usage-item__type-caution {
+      //   background: var(--guidelinesUsageCautionBackground);
+      //   color: var(--guidelinesUsageCautionInk);
+      //   --guidelinesUsageDescriptionInk: var(--guidelinesUsageCautionInk);
+
+      //   .content {
+      //     border-top-color: var(--guidelinesUsageCautionBorder);
+
+      //     a {
+      //       color: var(--guidelinesUsageCautionInk);
+      //     }
+      //   }
+
+      // }
+
+      &.guideline-usage-item__type-dont {
+        background: var(--guidelinesUsageDontBackground);
+        color: var(--guidelinesUsageDontInk);
+        --guidelinesUsageDescriptionInk: var(--guidelinesUsageDontInk);
+
+        .content {
+          border-top-color: var(--guidelinesUsageDontBorder);
+
+          a {
+            color: var(--guidelinesUsageDontInk);
+          }
+        }
+      }
+
+      &.guideline-usage-item__type-do {
+        background: var(--guidelinesUsageDoBackground);
+        color: var(--guidelinesUsageDoInk);
+        --guidelinesUsageDescriptionInk: var(--guidelinesUsageDoInk);
+
+         .content {
+          border-top-color: var(--guidelinesUsageDoBorder);
+
+          a {
+            color: var(--guidelinesUsageDoInk);
+          }
+        }
+
+        .type-badge {
+          color: var(--guidelinesUsageDoInk);
+        }
+      }
+
+    }
+  }
+
+  &.variant-side-border {
+    .guideline-usage-item {
+      gap: 8px;
+      border-radius: 0;
+
+      .item-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+
+        .side-border {
+          width: var(--guidelinesUsageBorderWidth, 3px);
+          height: 100%;
+          background: black;
+          flex-shrink: 0;
+          border-radius: 100px;
+          height: auto;
+        }
+
+        .content-wrapper {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          width: 100%;
+        }
+      }
+
+      // &.guideline-usage-item__type-caution {
+
+      //   .side-border {
+      //     background-color: var(--guidelinesUsageCautionBorder);
+      //   }
+      // }
+
+      &.guideline-usage-item__type-dont {
+
+        .side-border {
+          background-color: var(--guidelinesUsageDontBorder);
+        }
+      }
+
+      &.guideline-usage-item__type-do {
+
+        .side-border {
+          background-color: var(--guidelinesUsageDoBorder);
+        }
+      }
+    }
+  }
+
+  &.variant-contained {
+    .guideline-usage-item {
+      .image {
+        min-height: 42px;
+        position: relative;
+        border-top: var(--guidelinesUsageBorderWidth, 3px) solid black;
+
+        &.empty-image {
+          background: var(--colorBackgroundSecondary);
+          border-bottom-left-radius: var(--guidelinesUsageBorderRadius);
+          border-bottom-right-radius: var(--guidelinesUsageBorderRadius);
+        }
+
+        .image-asset {
+          border-top-left-radius: 0px;
+          border-top-right-radius: 0px;
+          border-top: 0;
+        }
+
+        .type-badge {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          z-index: 1;
+        }
+      }
+
+      &.guideline-usage-item__type-dont {
+        .image {
+          border-top-color: var(--guidelinesUsageDontBorder);
+
+          &.empty-image {
+            background: var(--guidelinesUsageDontBackground);
+          }
+        }
+      }
+
+      // &.guideline-usage-item__type-caution {
+      //   .image {
+      //     border-top-color: var(--guidelinesUsageCautionBorder);
+
+      //     &.empty-image {
+      //       background: var(--guidelinesUsageCautionBackground);
+      //     }
+      //   }
+      // }
+
+      &.guideline-usage-item__type-do {
+        .image {
+          border-top-color: var(--guidelinesUsageDoBorder);
+
+          &.empty-image {
+            background: var(--guidelinesUsageDoBackground);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@media (max-width: $breakpoint-mobile) {
+  .content-block--guidelines-usage {
+    // applied to all the variants because of !important
+    grid-template-columns: repeat(1, 1fr) !important;
+  }
+}
+
+@media (max-width: $breakpoint-tablet) {
+  .content-block--guidelines-usage {
+
+    &.layout-columns-3 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
