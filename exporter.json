@@ -6,7 +6,7 @@
   "organization": "Intuit",
   "source_dir": "src",
   "assets_dir": "assets",
-  "version": "5.5.6",
+  "version": "5.5.7",
   "usesBrands": false,
   "config": {
     "sources": "sources.json",
@@ -738,6 +738,15 @@
             "label": "Date of update"
           }
         ]
+      },
+      {
+        "key": "com.intuit.ids.documentation-main.guideline_usage",
+        "category": "Guidelines",
+        "title": "Usage Guidelines",
+        "description": "Show when and when not to use your components",
+        "icon": "icons/custom-block-checklist-all.png",
+        "mode": "block",
+        "properties": []
       }
     ],
     "blockVariants": {
