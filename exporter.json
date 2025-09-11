@@ -740,7 +740,7 @@
         ]
       },
       {
-        "key": "com.intuit.ids.documentation-main.guideline_usages",
+        "key": "com.intuit.ids.documentation-main.usage_guidelines",
         "category": "Guidelines",
         "title": "Usage Guidelines",
         "description": "Show when and when not to use your components",
