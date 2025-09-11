@@ -738,15 +738,6 @@
             "label": "Date of update"
           }
         ]
-      },
-      {
-        "key": "com.intuit.ids.documentation-main.guideline_usage",
-        "category": "Guidelines",
-        "title": "Usage Guidelines",
-        "description": "Show when and when not to use your components",
-        "icon": "icons/custom-block-checklist-all.png",
-        "mode": "block",
-        "properties": []
       }
     ],
     "blockVariants": {
