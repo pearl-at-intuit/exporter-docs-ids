@@ -54,7 +54,7 @@
     {[ case "Guidelines" ]}
         {[ inject "page_block_guidelines" context block /]}
     {[ case "GuidelinesUsage" ]}
-        {[ inject "page_block_guidelines_usage" context block /]}
+        {[ inject "page_block_guideline_usages" context block /]}
     {[ case "Custom" ]}
         {* For custom blocks, use different *}
         {[ inject "page_body_structure_block_custom" context block /]}
