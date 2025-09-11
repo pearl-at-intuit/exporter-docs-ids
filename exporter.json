@@ -740,13 +740,18 @@
         ]
       },
       {
-        "key": "com.intuit.ids.documentation-main.guideline_usage",
+        "key": "com.intuit.ids.documentation-main.guideline_usages",
         "category": "Guidelines",
         "title": "Usage Guidelines",
         "description": "Show when and when not to use your components",
         "icon": "icons/custom-block-checklist-all.png",
         "mode": "block",
-        "properties": []
+        "properties": [{
+            "key": "configuration",
+            "type": "number",
+            "default": 1,
+            "label": "Columns"
+          }]
       }
     ],
     "blockVariants": {
